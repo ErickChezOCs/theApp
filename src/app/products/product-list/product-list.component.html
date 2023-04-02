@@ -4,4 +4,5 @@
   <li (click)="selectedProduct = 'Microphone'">Microphone</li>
   <li (click)="selectedProduct = 'wireless Keyboard'">Wireless Keyboard</li>
 </ul>
-<app-product-detail [name] = "selectedProduct"></app-product-detail> <!--Input binding-->
+<app-product-detail [name] = "selectedProduct" (bought)="onBuy()"></app-product-detail>
+<!--Input and Output binding-->
