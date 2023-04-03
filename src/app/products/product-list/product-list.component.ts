@@ -9,7 +9,8 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
 })
 
 export class ProductListComponent implements AfterViewInit {
-  selectedProduct = 'Microphone';
+  products:string[] = ['Mouse','Pinpoint','Webcam','Wireless Keyboard','Gotyou','Microphone'];
+  selectedProduct = '';
   onBuy() {
     window.alert(`You just Bought ${this.selectedProduct} !`);
   }

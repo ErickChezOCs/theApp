@@ -1,16 +1,16 @@
-import { Component, Input, Output, EventEmitter, ViewEncapsulation, OnChanges, SimpleChanges,
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges,
   ChangeDetectionStrategy} from '@angular/core'; //Input sert à passer des données d'un composant
  // parent à un composant enfant  OnInit,
 // ngOnInit(): void {
 //  console.log(`Name is ${this.name} in the constructor`);}
-//
+//   ViewEncapsulation,
 
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  //encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
