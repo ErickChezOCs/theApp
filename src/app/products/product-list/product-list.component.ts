@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
   selector: 'app-product-list',
@@ -7,10 +8,16 @@ import { Component } from '@angular/core';
 
 })
 
-export class ProductListComponent {
+export class ProductListComponent implements AfterViewInit {
   selectedProduct = 'Microphone';
   onBuy() {
     window.alert(`You just Bought ${this.selectedProduct} !`);
   }
 
+  @ViewChild(ProductDetailComponent) productDetail: ProductDetailComponent | undefined;
+ ngAfterViewInit(): void {
+     if (this.productDetail) {
+      console.log(this.productDetail.name);
+     }
+ }
 }
