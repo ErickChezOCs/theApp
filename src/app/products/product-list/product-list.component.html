@@ -1,11 +1,11 @@
 <h2>Product List</h2>
 <ul>
- <li *ngFor="let product of products" (click)="selectedProduct = product">{{product}}</li>
+ <li *ngFor="let product of products" (click)="selectedProduct = product">{{product.name}}</li>
 </ul>
 <!-- using multiple *ngIf does not respect the DRY (Do not Repeat Yourself) principle-->
 <app-product-detail
 *ngIf="selectedProduct; else noProduct"
-[name] = "selectedProduct"
+[product] = "selectedProduct"
 (bought)="onBuy()">
 </app-product-detail>
 <ng-template  #noProduct>

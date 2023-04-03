@@ -4,7 +4,7 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges,
 // ngOnInit(): void {
 //  console.log(`Name is ${this.name} in the constructor`);}
 //   ViewEncapsulation,
-
+import { Product } from '../product';
 
 @Component({
   selector: 'app-product-detail',
@@ -17,11 +17,11 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges,
 
 
 export class ProductDetailComponent implements OnChanges {
-  constructor() {
+  /* constructor() {
     console.log(`Name is ${this.name} in the constructor`);
-  }
+  } */
   ngOnChanges(changes: SimpleChanges): void {
-      const product = changes['name'];
+      const product = changes['product'];
       if (!product.isFirstChange()) {
         const oldValue = product.previousValue;
       const newValue = product.currentValue;
@@ -30,15 +30,12 @@ export class ProductDetailComponent implements OnChanges {
 
   }
 
-  @Input() name!:string ;
+  @Input() product: Product | undefined ;
   @Output() bought = new EventEmitter();
   buy() {
     this.bought.emit();
   }
-  get productName(): string {
-    console.log(`Get ${this.name}`);
-    return this.name;
-  }
+  
 
 
 }
