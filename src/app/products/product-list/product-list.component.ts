@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 
 export class ProductListComponent {
-  selectedProduct = '';
+  selectedProduct = 'Microphone';
   onBuy() {
     window.alert(`You just Bought ${this.selectedProduct} !`);
   }
