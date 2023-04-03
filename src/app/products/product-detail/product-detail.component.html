@@ -1,6 +1,9 @@
 <div *ngIf="product">
   <h2>Product Details</h2>
   <h3>{{product.name}}</h3>
+  <span>{{product.price | currency:'EUR'}}</span>
+  <!-- usethe json pipe for debugging-->
+  <!-- <p>{{product | json}} </p> -->
   <div [ngSwitch]="product.name">
     <p *ngSwitchCase="'Webcam'">
       Product is used for video
