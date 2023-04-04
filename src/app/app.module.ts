@@ -6,11 +6,17 @@ import { OrdersModule } from './orders/orders.module';
 import { ProductsModule } from './products/products.module';
 import { HelloWorldComponent } from './montest.component';
 import { CoreModule } from './core/core.module';
+import { CopyrightDirective } from './copyright.directive';
+import { NumericDirective } from './numeric.directive';
+
+
 
 @NgModule({
   declarations: [
     HelloWorldComponent,
-    AppComponent
+    AppComponent,
+    CopyrightDirective,
+    NumericDirective
   ],
   imports: [
     BrowserModule,
