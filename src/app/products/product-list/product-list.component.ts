@@ -33,6 +33,8 @@ export class ProductListComponent implements OnInit, AfterViewInit {
  ngOnInit(): void {
      this.products = this.productService.getProducts();
  }
+
+
  constructor(private productService: ProductsService) {
   this.productService = new ProductsService();
 }
