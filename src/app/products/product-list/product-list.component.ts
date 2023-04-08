@@ -12,10 +12,12 @@ import { ProductsService } from '../products.service';
 
 })
 
+
 export class ProductListComponent implements OnInit, AfterViewInit {
 
   selectedProduct: Product | undefined;
   products: Product[] = [];
+
 
 
   onBuy() {
@@ -29,13 +31,20 @@ export class ProductListComponent implements OnInit, AfterViewInit {
       console.log(this.productDetail.product);
      }
  }
+ private getProducts() {
+  this.productService.getProducts()
+    .subscribe(products => {this.products = products;});
+}
+
 
  ngOnInit(): void {
-     this.products = this.productService.getProducts();
+     this.getProducts();
  }
 
 
  constructor(private productService: ProductsService) {
   this.productService = new ProductsService();
 }
+
+
 }
